@@ -1,1 +1,1 @@
-web: gunicorn nellyshulman.wsgi --log-file -
+web: uwsgi uwsgi.ini
