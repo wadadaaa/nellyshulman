@@ -57,3 +57,16 @@ class SkillMixin(object):
 
 class SkillList(SkillMixin, ListView):
     template_name = 'main/about.html'
+
+class TestimonialMixin(object):
+    model = Testimonial
+
+class TestimonialList(TestimonialMixin, ListView):
+    template_name = 'main/testimonials.html'
+
+class TestimonialDetail(TestimonialMixin, DetailView):
+    def get_context_data(self, **kwargs):
+        context = super(TestimonialDetail, self).get_context_data(**kwargs)
+        context['testimonials'] = Testimonial.objects.filter(testimonial=Testimonial)
+
+        return context

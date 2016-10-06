@@ -8,6 +8,10 @@ urlpatterns = [
                    GoalList.as_view(), name='goal'),
     url(r'^benefits/$',
                    BenefitList.as_view(), name='benefit'),
-   url(r'^fees/$',
-                  FeeList.as_view(), name='fee'),                   
+    url(r'^fees/$',
+                   FeeList.as_view(), name='fee'),
+    url(r'^testimonial/$',
+                   TestimonialList.as_view(), name='testimonial'),                   
+    url(r'^testimonial/detail/(?P<slug>[-_\w]+)/$',
+                   TestimonialDetail.as_view(), name='testimonial_detail'),
 ]

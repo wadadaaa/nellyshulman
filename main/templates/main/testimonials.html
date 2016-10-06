@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+{% for object in object_list %}
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+        <h4>{{ object.name }}</h4>
+        <p class="lead">{{ object.position }}</p>
+        <div class="row">
+          <div class="col-md-8">
+            <p><a href="{{ object.url }}">{{ object.url }}</a></p>
+
+            <p>{{ object.location }}</p>
+            <p>Phone number: {{ object.phone_number }}</p>
+
+
+          </div>
+          <div class="col-md-4">
+            <p><img src="{{ object.avatar.url }}" alt="{{ object.name }}" class="image img-circle img-responsive"></p>
+          </div>
+        </div>
+        <!-- <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p> -->
+        <!-- <h4 class="text-uppercase">Education</h4> -->
+        <ul>
+          <li>{{ object.testimonial }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

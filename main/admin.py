@@ -28,9 +28,18 @@ class BenefitAdmin(admin.ModelAdmin):
 class FeeAdmin(admin.ModelAdmin):
     pass
 
+class TestimonialAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("name",)}
+    list_display = ('admin_thumbnail', 'name')
+
+    def admin_thumbnail(self, obj):
+        return '<img src="%s%s" alt="" height="50">' % (settings.MEDIA_URL, obj.avatar)
+    admin_thumbnail.allow_tags = True
+
 admin.site.register(Preface, PrefaceAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Skill, SkillAdmin)
 admin.site.register(Goal, GoalAdmin)
 admin.site.register(Benefit, BenefitAdmin)
 admin.site.register(Fee, FeeAdmin)
+admin.site.register(Testimonial, TestimonialAdmin)
