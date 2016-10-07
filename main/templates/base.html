@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- Google fonts - Open Sans-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
     <!-- Font Awesome CSS-->
@@ -40,37 +40,34 @@
                 <!--   *** SIDEBAR ***-->
                 <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
                     <div class="sidebar-content">
-                        <h1 class="sidebar-heading"> <a href="/">English with nellyshulman
+                        <h1 class="sidebar-heading"> <a href="/">English with Nelly Shulman
                               Lessons and Translation</a></h1>
                         <p class="sidebar-p">ENGLISH LESSONS IN ST.PETERBURG TRIAL LESSON FREE</p>
                         <p class="sidebar-p">Welcome to English with nellyshulman. Intermediate, Upper Intermediate and Advanced level classes Exam preparation, academic writing, conversational practice.</p>
                         <ul class="sidebar-menu">
-                            <li class="active"><a href="/">Home and Blog</a></li>
-                            <li><a href="{% url 'about' %}">About</a></li>
-                            <li><a href="{% url 'goal' %}">Goals</a></li>
-                            <li><a href="{% url 'benefit' %}">Benefits</a></li>
-                            <li><a href="{% url 'testimonial' %}">Testimonials</a></li>
-                            <li><a href="{% url 'fee' %}">Fees</a></li>
-                            <li><a href="contacts.html">Get in touch</a></li>
+                            <li class="{%block home%}{%endblock%}"><a href="/">Blog</a></li>
+                            <li class="{%block about%}{%endblock%}"><a href="{% url 'about' %}">About</a></li>
+                            <li class="{%block goal%}{%endblock%}"><a href="{% url 'goal' %}">Goals</a></li>
+                            <li class="{%block benefit%}{%endblock%}"><a href="{% url 'benefit' %}">Benefits</a></li>
+                            <li class="{%block testimonial%}{%endblock%}"><a href="{% url 'testimonial' %}">Testimonials</a></li>
+                            <li class="{%block fee%}{%endblock%}"><a href="{% url 'fee' %}">Fees</a></li>
+                            <li class="{%block contact%}{%endblock%}"><a href="{% url 'contact' %}">Get in touch</a></li>
                         </ul>
                         <p class="social"><a href="#" data-animate-hover="pulse" class="external facebook"><i class="fa fa-facebook"></i></a><a href="#" data-animate-hover="pulse" class="external gplus"><i class="fa fa-google-plus"></i></a><a href="#" data-animate-hover="pulse"
                                 class='external twitter'><i class="fa fa-twitter"></i></a><a href="#" title="" class="external instagram"><i class="fa fa-instagram"></i></a><a href="#" data-animate-hover="pulse" class="email"><i class="fa fa-envelope"></i></a></p>
                         <div class="copyright">
-                            <p class="credit">&copy;2016 English with nellyshulman</a></p>
+                            <p class="credit">&copy;2016 English with Nelly Shulman</a></p>
                         </div>
                     </div>
                 </div>
                 <!--   *** SIDEBAR END ***  -->
-
                 {% block content %} {% endblock %}
-
-
             </div>
         </div>
     </div>
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js">
     </script>
@@ -81,24 +78,6 @@
     <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/front.js' %}"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
-    <!---->
-    <script>
-        (function(b, o, i, l, e, r) {
-            b.GoogleAnalyticsObject = l;
-            b[l] || (b[l] =
-                function() {
-                    (b[l].q = b[l].q || []).push(arguments)
-                });
-            b[l].l = +new Date;
-            e = o.createElement(i);
-            r = o.getElementsByTagName(i)[0];
-            e.src = '//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e, r)
-        }(window, document, 'script', 'ga'));
-        ga('create', 'UA-XXXXX-X');
-        ga('send', 'pageview');
-    </script>
 </body>
 
 </html>

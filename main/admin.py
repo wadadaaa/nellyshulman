@@ -36,6 +36,10 @@ class TestimonialAdmin(admin.ModelAdmin):
         return '<img src="%s%s" alt="" height="50">' % (settings.MEDIA_URL, obj.avatar)
     admin_thumbnail.allow_tags = True
 
+class ContactAdmin(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(Preface, PrefaceAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Skill, SkillAdmin)
@@ -43,3 +47,4 @@ admin.site.register(Goal, GoalAdmin)
 admin.site.register(Benefit, BenefitAdmin)
 admin.site.register(Fee, FeeAdmin)
 admin.site.register(Testimonial, TestimonialAdmin)
+admin.site.register(Contact, ContactAdmin)

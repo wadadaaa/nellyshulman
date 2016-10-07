@@ -1,5 +1,9 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}{%block fee%}active{%endblock%} {% block content %}
 <div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+    <div class="small-navbar visible-xs">
+        <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
+        <h1 class="small-navbar-heading"> <a href="/">English with Nelly</a></h1>
+    </div>
     <div class="row">
         {% for object in object_list %}
         <div class="col-lg-8">

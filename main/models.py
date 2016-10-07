@@ -86,3 +86,16 @@ class Testimonial(models.Model):
 
     def get_absolute_url(self):
         return reverse('testimonials_detail', kwargs={'slug': self.slug})
+
+class Contact(models.Model):
+    name = models.CharField(max_length=80)
+    preface = models.TextField(blank=True, help_text="Main idea")
+    definition = models.TextField(blank=True, help_text="Definition")
+    fb = models.URLField(blank=True, help_text="Facebook link")
+    tw = models.URLField(blank=True, help_text="Twitter link")
+    gg = models.URLField(blank=True, help_text="Google plus link")
+    ig = models.URLField(blank=True, help_text="Instagramm link")
+    ml = models.URLField(blank=True, help_text="Email")
+
+    def __str__(self):              # __unicode__ on Python 2
+        return self.name

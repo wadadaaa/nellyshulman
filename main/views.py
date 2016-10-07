@@ -70,3 +70,8 @@ class TestimonialDetail(TestimonialMixin, DetailView):
         context['testimonials'] = Testimonial.objects.filter(testimonial=Testimonial)
 
         return context
+
+def contact(request):
+    contacts = Contact.objects.all()
+    context = {'contacts': contacts}
+    return render(request, 'main/contacts.html', context)
