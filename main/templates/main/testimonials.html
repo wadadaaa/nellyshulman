@@ -1,10 +1,11 @@
-{% extends "base.html" %}{%block testimonial%}active{%endblock%} {% block content %}{% for object in object_list %}
+{% extends "base.html" %}{%block testimonial%}active{%endblock%} {% block content %}
 <div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
     <div class="small-navbar visible-xs">
         <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
         <h1 class="small-navbar-heading"> <a href="/">English with Nelly</a></h1>
     </div>
     <div class="row">
+      {% for object in object_list %}
         <div class="col-lg-8">
             <div class="content-column-content">
                 <h4>{{ object.name }}</h4>
@@ -14,7 +15,9 @@
                         <p><a href="{{ object.url }}">{{ object.url }}</a></p>
 
                         <p>{{ object.location }}</p>
+                        {% if object.phone_number %}
                         <p>Phone number: {{ object.phone_number }}</p>
+                        {% endif %}
 
 
                     </div>
@@ -29,6 +32,7 @@
                 </ul>
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
-{% endfor %} {% endblock %}
+ {% endblock %}
